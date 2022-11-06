@@ -1,0 +1,43 @@
+﻿<Window x:Class="Lmw.Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lmw.Calculator"
+        mc:Ignorable="d"
+        WindowStartupLocation="Manual"
+        Title="计算器" Height="750" Width="450" FontSize="30" MinWidth="400" MinHeight="500">
+    <Window.DataContext>
+        <local:MainViewModel></local:MainViewModel>
+    </Window.DataContext>
+    <DockPanel>
+
+        <TextBox DockPanel.Dock="Top" Height="200" FontSize="60"  Text="{Binding Value}" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"></TextBox>
+        <UniformGrid Columns ="4">
+            <Button  Content="%" Command="{Binding BtnCommand}" CommandParameter="%" Background="#FFCF9004"></Button>
+            <Button  Content="n!" Command="{Binding BtnCommand}" CommandParameter="n!" Background="#FFCF9004"></Button>
+            <Button  Content="清零" Command="{Binding ClearCommand}" Background="#FFCF9004"></Button>
+            <Button  Content="撤销" Command="{Binding RecantedCommand}" Background="#FFCF9004"></Button>
+            <Button  Content="1/x" Command="{Binding BtnCommand}" CommandParameter="1/x" Background="#FFCF9004"></Button>
+            <Button  Content="x²" Command="{Binding BtnCommand}" CommandParameter="x²" Background="#FFCF9004"></Button>
+            <Button  Content="√" Command="{Binding BtnCommand}" CommandParameter="√" Background="#FFCF9004"></Button>
+            <Button  Content="÷" Command="{Binding BtnCommand}" CommandParameter="/" Background="#FFCF9004"></Button>
+            <Button  Content="7" Command="{Binding BtnCommand}" CommandParameter="7" ></Button>
+            <Button  Content="8" Command="{Binding BtnCommand}" CommandParameter="8" ></Button>
+            <Button  Content="9" Command="{Binding BtnCommand}" CommandParameter="9"></Button>
+            <Button  Content="×" Command="{Binding BtnCommand}" CommandParameter="*" Background="#FFCF9004"></Button>
+            <Button  Content="4" Command="{Binding BtnCommand}" CommandParameter="4"></Button>
+            <Button  Content="5" Command="{Binding BtnCommand}" CommandParameter="5"></Button>
+            <Button  Content="6" Command="{Binding BtnCommand}" CommandParameter="6"></Button>
+            <Button  Content="-" Command="{Binding BtnCommand}" CommandParameter="-" Background="#FFCF9004"></Button>
+            <Button  Content="1" Command="{Binding BtnCommand}" CommandParameter="1"></Button>
+            <Button  Content="2" Command="{Binding BtnCommand}" CommandParameter="2"></Button>
+            <Button  Content="3" Command="{Binding BtnCommand}" CommandParameter="3"></Button>
+            <Button  Content="+" Command="{Binding BtnCommand}" CommandParameter="+" Background="#FFCF9004"></Button>
+            <Button  Content="+/_" Command="{Binding BtnCommand}" CommandParameter="+/_"></Button>
+            <Button  Content="0" Command="{Binding BtnCommand}" CommandParameter="0"></Button>
+            <Button  Content="." Command="{Binding BtnCommand}" CommandParameter="."></Button>
+            <Button  Content="=" Command="{Binding BtnCommand}" CommandParameter="=" Background="#FFCF9004"></Button>
+        </UniformGrid>
+    </DockPanel>
+</Window>
